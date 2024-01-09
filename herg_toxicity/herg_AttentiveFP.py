@@ -13,7 +13,7 @@ from sklearn import metrics
 from rdkit import DataStructs, Chem
 from rdkit.Chem import AllChem
 
-from Cheminfomatics.utility.Featurizer import *
+from Cheminfomatics.utility.GraphFeaturizer import *
 
 silence_tensorflow()
 pd.set_option('display.max_columns', None)

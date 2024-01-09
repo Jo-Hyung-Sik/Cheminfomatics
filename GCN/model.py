@@ -1,6 +1,6 @@
 import torch
 import torch.nn.functional as F
-from torch.nn import Linear, ReLU, Sigmoid
+from torch.nn import Linear, ReLU, Softmax
 from torch_geometric.nn import GCNConv, global_mean_pool, BatchNorm
 
 class GCN(torch.nn.Module):
@@ -33,4 +33,5 @@ class GCN(torch.nn.Module):
         # x = self.relu(self.fc2(x))
         # x = F.dropout(x, self.dropout, training = self.training)
         x = self.linear(x)
+        x = F.softmax(x, dim=1)
         return x
